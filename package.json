@@ -1,0 +1,20 @@
+{
+  "name": "Employer-Tracker",
+  "version": "1.0.0",
+  "description": "A command line application that allows the user to add, view, and update different departments, roles, and employees.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChelSEA-88/Employer-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChelSEA-88/Employer-Tracker/issues"
+  },
+  "homepage": "https://github.com/ChelSEA-88/Employer-Tracker#readme"
+}

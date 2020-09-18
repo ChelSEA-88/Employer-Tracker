@@ -53,14 +53,16 @@ function start() {
 }
 
 async function viewAllEmployees() {
-    console.log(db.findAllEmployees)
+    // console.log(db.findAllEmployees)
     const employees =  await db.findAllEmployees();
     console.table(employees);
+    
+    start();
+
 }
 
-function viewRoles() {
-    const roles = db.findAllRoles();
-  
+async function viewRoles() {
+    const roles = await db.findAllRoles();
     console.log("\n");
     console.table(roles);
   

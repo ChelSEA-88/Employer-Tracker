@@ -8,13 +8,13 @@ function start() {
     inquirer.prompt([
       {
         name: "options",
-          type: "list",
-          message: "What would you like to do?",
-          choices: [
-          "View All Employees",
-          "View Departments",
-          "View Roles",
-          "Add Employee", 
+        type: "list",
+        message: "What would you like to do?",
+        choices: [
+        "View All Employees",
+        "View Departments",
+        "View Roles",
+        "Add Employee", 
         "Update Employee Role",
         "Add Department",
         "Add Roles",
@@ -28,45 +28,72 @@ function start() {
                 viewAllEmployees();
                 break;
             case "View Departments":
-                viewDept();
+                viewDepartments();
                 break;
             case "View Roles":
                 viewRoles();
                 break;
-          
-          case "Add Employee":
+            case "Add Employee":
               addEmployee();
               break;
-          
-          case "Update Employee Roll":
+            case "Update Employee Roll":
               updateRoll();
               break;
-
-          case "Add Roles":
+            case "Add Roles":
               addRoles();
               break;
-          
-          default:
+            default:
             process.exit();
         }
-})
+    })
 }
 
+//table view functions//
 async function viewAllEmployees() {
     // console.log(db.findAllEmployees)
     const employees =  await db.findAllEmployees();
     console.table(employees);
     
     start();
-
 }
 
 async function viewRoles() {
     const roles = await db.findAllRoles();
     console.log("\n");
     console.table(roles);
-  
 
+    start();
 }
+
+async function viewDepartments() {
+    const department = await db.findAllDepartments();
+    console.log("\n");
+    console.table(department);
+
+    start();
+}
+
+async function addEmployee() {
+    inquirer.prompt([
+   
+      {
+        type: "input",
+        message: "What's the employee's first name?",
+        name: "first_name"
+      },
+      {
+        type: "input",
+        message: "What's the employee's last name?",
+        name: "last_name"
+      },
+      {
+        type: "input",
+        message: "What's the employee's title (roles_id)?",
+        name: "titleID"
+      }
+    ]).then(insertEmployee());
+    start();
+}
+     
 
 start();

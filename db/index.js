@@ -9,7 +9,7 @@ class DB {
     //find all employees, join with roles+departments
     findAllEmployees(){
         return this.connection.query(
-            "SELECT employees.id,employees.first_name, employees.last_name, roles.title AS \"role\", managers.first_name AS \"manager\" FROM employees LEFT JOIN roles ON employees.role_id = roles.id LEFT JOIN employees managers ON employees.manager_id = managers.id GROUP BY employees.id"
+            "SELECT employees.id, employees.first_name, employees.last_name, roles.title AS \"role\", managers.first_name AS \"manager\" FROM employees LEFT JOIN roles ON employees.role_id = roles.id LEFT JOIN employees managers ON employees.manager_id = managers.id GROUP BY employees.id"
         )
     }
     //find all roles
@@ -23,15 +23,20 @@ class DB {
 
     findAllDepartments(){
         return this.connection.query(
-            ""
+            "SELECT * FROM department"
         );
     }
 
     //add departments
 
-    addDepartment(){
+    insertEmployee(){
         return this.connection.query(
-            ""
+            "INSERT INTO employees SET ?",
+            {
+              first_name: answer.first_name,
+              last_name: answer.last_name,
+              roles_id: answer.titleID,
+            }
         );
     }
 

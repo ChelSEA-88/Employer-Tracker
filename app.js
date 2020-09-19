@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const db = require("./db");
+const connection = require("./db/sqlConnect");
 require("console.table");
 
 
@@ -72,9 +73,8 @@ async function viewDepartments() {
 
     start();
 }
-
-async function addEmployee() {
-    inquirer.prompt([
+function addEmployee() {
+    const questions = [
    
       {
         type: "input",
@@ -91,9 +91,26 @@ async function addEmployee() {
         message: "What's the employee's title (roles_id)?",
         name: "titleID"
       }
-    ]).then(insertEmployee());
-    start();
-}
+    ];
+    inquirer.prompt(questions).then(async function(answer) {
+       await connection.query(
+          "INSERT INTO employees SET ?",
+          {
+            first_name: answer.first_name,
+            last_name: answer.last_name,
+            role_id: answer.titleID,
+            manager_id: answer.managerID,
+          });
+          viewAllEmployees();
+          start();
+        });
+    
+
+
+              
+            
+        
+   }
      
 
 start();

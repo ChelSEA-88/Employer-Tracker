@@ -29,16 +29,16 @@ class DB {
 
     //add departments
 
-    insertEmployee(){
-        return this.connection.query(
-            "INSERT INTO employees SET ?",
-            {
-              first_name: answer.first_name,
-              last_name: answer.last_name,
-              roles_id: answer.titleID,
-            }
-        );
-    }
+    // insertEmployee(){
+    //     return this.connection.query(
+    //         "INSERT INTO employees SET ?",
+    //         {
+    //           first_name: answer.first_name,
+    //           last_name: answer.last_name,
+    //           roles_id: answer.titleID,
+    //         }
+    //     );
+    // }
 
     //add roles
 

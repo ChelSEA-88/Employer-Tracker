@@ -18,6 +18,8 @@ A command line application that allows the user to add, view, and update differe
   Please use this link to view how the application will work.
 
   https://drive.google.com/file/d/1RBh9hykBcLyFIbDHSKjpOy39VR0lvc7J/view
+  
+  ![](/assets/tracker.png)
 
   ## Licensing
   ![Github License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)

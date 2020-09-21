@@ -14,8 +14,10 @@ A command line application that allows the user to add, view, and update differe
   You can run this application by typing "node app.js" in your terminal and following the prompts 
 
   ## How to use this application:
-  Run 'node index.js' then follow and answer the prompted questions.
-  https://drive.google.com/file/d/1nnPFQtJLi5lOu_NJgHzs3Hfir4KYI2M7/view
+
+  Please use this link to view how the application will work.
+
+  https://drive.google.com/file/d/1RBh9hykBcLyFIbDHSKjpOy39VR0lvc7J/view
 
   ## Licensing
   ![Github License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)

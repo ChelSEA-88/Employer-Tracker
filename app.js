@@ -10,7 +10,7 @@ function start() {
       {
         name: "options",
         type: "list",
-        message: "What would you like to do?",
+        message: "Welcome to Employee Tracker, What would you like to do?",
         choices: [
         "View All Employees",
         "View Departments",
@@ -35,14 +35,17 @@ function start() {
                 viewRoles();
                 break;
             case "Add Employee":
-              addEmployee();
-              break;
+                addEmployee();
+                break;
             case "Update Employee Roll":
-              updateRoll();
-              break;
+                updateRoll();
+                break;
             case "Add Roles":
-              addRoles();
-              break;
+                addRoles();
+                break;
+            case "Add Department":
+                addDepartment();
+                break;
             default:
             process.exit();
         }
@@ -104,11 +107,14 @@ function addEmployee() {
           viewAllEmployees();
           start();
         });
+
+        //add a function that will allow the user to update the employee roll update employee role
+
+        //add a function that will allow the user to add to the departments list
+
+        //add a functions that will allow the user to add employee roles
     
 
-
-              
-            
         
    }
      
